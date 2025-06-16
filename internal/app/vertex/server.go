@@ -3,6 +3,7 @@ package vertex
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/lucidnet/lucidnet/internal/app/vertex/health"
 	"log"
 )
 
@@ -22,6 +23,8 @@ type ServerConfig struct {
 
 func (s *Server) Start() {
 	router := gin.Default()
+
+	health.NewHandler(router).Register()
 
 	log.Println("starting vertex server on host and port: ", s.config.Host, s.config.Port)
 
