@@ -33,3 +33,6 @@ go.work.sum
 
 # Data directories
 data/
+*.db
+*.sqlite
+*.sqlite3
